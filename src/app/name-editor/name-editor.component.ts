@@ -11,6 +11,9 @@ import {FormControl} from '@angular/forms';
     <p>
       Value: {{ name.value }}
     </p>
+    <p>
+      <button (click)="updateName()">Update Name</button>
+    </p>
   `,
   styleUrls: ['./name-editor.component.css']
 })
@@ -18,5 +21,9 @@ export class NameEditorComponent {
   name = new FormControl('');
 
   constructor() { }
+
+  updateName(): void {
+    this.name.setValue('Nancy');
+  }
 
 }
