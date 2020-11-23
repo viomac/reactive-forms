@@ -4,8 +4,12 @@ import {FormControl} from '@angular/forms';
 @Component({
   selector: 'app-name-editor',
   template: `
+    <label>
+      Name:
+      <input type="text" [formControl]="name">
+    </label>
     <p>
-      name-editor works!
+      Value: {{ name.value }}
     </p>
   `,
   styleUrls: ['./name-editor.component.css']
