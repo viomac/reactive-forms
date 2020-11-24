@@ -91,6 +91,14 @@ export class ProfileEditorComponent {
 
   constructor(private fb: FormBuilder) { }
 
+  get aliases(): FormArray {
+    return this.profileForm.get('aliases') as FormArray;
+  }
+
+  addAlias(): void {
+    this.aliases.push(this.fb.control(''));
+  }
+
   onSubmit(): void {
     console.warn(this.profileForm.value);
   }
