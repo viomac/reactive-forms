@@ -14,8 +14,27 @@ import {FormControl, FormGroup} from '@angular/forms';
         Last Name:
         <input type="text" formControlName="lastName">
       </label>
+      <div formGroupName="address">
+        <h3>Address</h3>
+        <label>
+          Street:
+          <input type="text" formControlName="street">
+        </label>
+        <label>
+          City:
+          <input type="text" formControlName="city">
+        </label>
+        <label>
+          State:
+          <input type="text" formControlName="state">
+        </label>
+        <label>
+          Zip code:
+          <input type="text" formControlName="zip">
+        </label>
+      </div>
 
-      <button type="su bmit" [disabled]="!profileForm.valid">Submit</button>
+      <button type="submit" [disabled]="!profileForm.valid">Submit</button>
     </form>
   `,
   styleUrls: ['./profile-editor.component.css']
