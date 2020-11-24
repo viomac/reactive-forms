@@ -36,6 +36,10 @@ import {FormControl, FormGroup} from '@angular/forms';
 
       <button type="submit" [disabled]="!profileForm.valid">Submit</button>
     </form>
+
+    <p>
+      Values: {{ profileForm.value | json }}
+    </p>
   `,
   styleUrls: ['./profile-editor.component.css']
 })
