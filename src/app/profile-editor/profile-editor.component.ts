@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -59,7 +59,7 @@ export class ProfileEditorComponent {
     })
   });
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   onSubmit(): void {
     console.warn(this.profileForm.value);
