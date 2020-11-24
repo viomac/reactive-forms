@@ -37,6 +37,18 @@ import {
         </label>
       </div>
 
+        <div class="div" formArrayName="aliases">
+          <h3>Aliases</h3>
+          <button (click)="addAlias()">Add Alias</button>
+
+          <div *ngFor="let alias of aliases.controls; let i=index">
+            <label>
+              Alias:
+              <input class="form-control" type="text" [formControlName]="i">
+            </label>
+          </div>
+        </div>
+
       <button type="submit" [disabled]="!profileForm.valid">Submit</button>
     </form>
 
