@@ -40,6 +40,10 @@ import {FormControl, FormGroup} from '@angular/forms';
     <p>
       Values: {{ profileForm.value | json }}
     </p>
+
+    <p>
+      <button (click)="updateProfile()">Update Profile</button>
+    </p>
   `,
   styleUrls: ['./profile-editor.component.css']
 })
@@ -59,5 +63,14 @@ export class ProfileEditorComponent {
 
   onSubmit(): void {
     console.warn(this.profileForm.value);
+  }
+
+  updateProfile(): void {
+    this.profileForm.patchValue({
+      firstName: 'Nancy',
+      address: {
+        street: '123 Drew Street'
+      }
+    });
   }
 }
