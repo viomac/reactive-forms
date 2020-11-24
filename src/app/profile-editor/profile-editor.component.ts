@@ -65,7 +65,7 @@ export class ProfileEditorComponent {
       zip: new FormControl('')
     })
   });*/
-  profileForm = this.fb.group({
+  /*profileForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
     address: this.fb.group({
@@ -74,6 +74,19 @@ export class ProfileEditorComponent {
       state: [''],
       zip: ['']
     })
+  });*/
+  profileForm = this.fb.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: ['']
+    }),
+    aliases: this.fb.array([
+      this.fb.control('')
+    ])
   });
 
   constructor(private fb: FormBuilder) { }
