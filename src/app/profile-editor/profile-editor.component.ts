@@ -21,11 +21,17 @@ import {FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./profile-editor.component.css']
 })
 export class ProfileEditorComponent {
-
   profileForm = new FormGroup({
     firstName: new FormControl(''),
-    lastName: new FormControl('')
+    lastName: new FormControl(''),
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl('')
+    })
   });
+
   constructor() { }
 
   onSubmit(): void {
