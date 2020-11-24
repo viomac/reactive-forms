@@ -4,33 +4,33 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 @Component({
   selector: 'app-profile-editor',
   template: `
-    <h2>Form group control</h2>
+    <h2 class="mt-5 mb-3">Form group control</h2>
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-      <label>
-        First Name:
-        <input type="text" formControlName="firstName" required>
-      </label>
+        <label>
+          First Name:
+          <input class="form-control" type="text" formControlName="firstName" required>
+        </label>
       <label>
         Last Name:
-        <input type="text" formControlName="lastName" required>
+        <input class="form-control" type="text" formControlName="lastName" required>
       </label>
       <div formGroupName="address">
-        <h3>Address</h3>
+        <h3 class="mt-4 mb-3">Address</h3>
         <label>
           Street:
-          <input type="text" formControlName="street">
+          <input class="form-control" type="text" formControlName="street">
         </label>
         <label>
           City:
-          <input type="text" formControlName="city">
+          <input class="form-control" type="text" formControlName="city">
         </label>
         <label>
           State:
-          <input type="text" formControlName="state">
+          <input class="form-control" type="text" formControlName="state">
         </label>
         <label>
           Zip code:
-          <input type="text" formControlName="zip">
+          <input class="form-control" type="text" formControlName="zip">
         </label>
       </div>
 

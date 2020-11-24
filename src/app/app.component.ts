@@ -3,7 +3,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <app-profile-editor></app-profile-editor>
+    <div class="row justify-content-center">
+      <div class="col-md-5 col-sm-5">
+      <app-profile-editor></app-profile-editor>
+      </div>
+    </div>
   `,
   styleUrls: ['./app.component.css']
 })
