@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -8,11 +8,11 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <label>
         First Name:
-        <input type="text" formControlName="firstName">
+        <input type="text" formControlName="firstName" required>
       </label>
       <label>
         Last Name:
-        <input type="text" formControlName="lastName">
+        <input type="text" formControlName="lastName" required>
       </label>
       <div formGroupName="address">
         <h3>Address</h3>
@@ -42,6 +42,10 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
     </p>
 
     <p>
+      Form Status: {{ profileForm.status }}
+    </p>
+
+    <p>
       <button (click)="updateProfile()">Update Profile</button>
     </p>
   `,
@@ -59,8 +63,8 @@ export class ProfileEditorComponent {
     })
   });*/
   profileForm = this.fb.group({
-    firstName: [''],
-    lastName: [''],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
     address: this.fb.group({
       street: [''],
       city: [''],
