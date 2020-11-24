@@ -48,7 +48,7 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./profile-editor.component.css']
 })
 export class ProfileEditorComponent {
-  profileForm = new FormGroup({
+  /*profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     address: new FormGroup({
@@ -56,6 +56,16 @@ export class ProfileEditorComponent {
       city: new FormControl(''),
       state: new FormControl(''),
       zip: new FormControl('')
+    })
+  });*/
+  profileForm = this.fb.group({
+    firstName: [''],
+    lastName: [''],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: ['']
     })
   });
 
